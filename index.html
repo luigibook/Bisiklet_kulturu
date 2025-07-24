@@ -3,833 +3,1386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesyonel Bisiklet ve Koşu Sporlarında Doping ve Performans Artırıcılar: Bilimsel Analiz</title>
+    <title>Türkiye'nin En Kapsamlı Bisiklet Kültürü ve Terminolojisi Rehberi</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .legal { background-color: #d4edda; border-left: 4px solid #28a745; }
-        .illegal { background-color: #f8d7da; border-left: 4px solid #dc3545; }
-        .suspicious { background-color: #fff3cd; border-left: 4px solid #ffc107; }
-        .performance-bar { 
-            height: 20px; 
-            border-radius: 10px; 
-            display: inline-block; 
-            margin-right: 10px;
-            position: relative;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
-        .performance-bar::after {
-            content: '';
-            position: absolute;
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+        .nav-button {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin: 4px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-button:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transform: translateY(-1px);
+            color: white;
+            text-decoration: none;
+        }
+        .emoji-header {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        .country-flag {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        .rider-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .climb-card {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .quote-card {
+            background: #fef7cd;
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            font-style: italic;
+        }
+        .term-definition {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 8px 0;
+        }
+        .sticky-nav {
+            position: sticky;
             top: 0;
-            left: 0;
-            height: 100%;
-            border-radius: 10px;
-            animation: fillAnimation 2s ease-in-out;
+            z-index: 50;
+            background: white;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 12px 0;
         }
-        @keyframes fillAnimation {
-            from { width: 0%; }
-            to { width: 100%; }
+        .section-title {
+            color: #1e40af;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
         }
-        .chart-container { height: 400px; margin: 20px 0; }
-        .data-point { 
-            padding: 8px 16px; 
-            margin: 4px; 
-            border-radius: 20px; 
-            display: inline-block; 
-            font-weight: bold;
+        .subsection-title {
+            color: #374151;
+            border-left: 4px solid #6b7280;
+            padding-left: 12px;
+            margin: 20px 0 12px 0;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .highlight-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .monument-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .classic-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="min-h-screen">
     <!-- Header -->
-    <header class="gradient-bg text-white py-16">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold mb-4 text-center">Profesyonel Bisiklet ve Koşu Sporlarında Doping ve Performans Artırıcılar</h1>
-            <p class="text-xl text-center opacity-90 mb-8">Bilimsel Analiz ve Güncel Veriler (2020-2025)</p>
+    <header class="bg-white shadow-lg border-b-4 border-blue-600">
+        <div class="container mx-auto px-4 py-6">
             <div class="text-center">
-                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
-                    <i class="fas fa-user-md mr-2"></i>Hazırlayan: Ümit Emre Erdoğan
-                </span>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-bicycle text-blue-600 mr-3"></i>
+                    Bisiklet Kültürü ve Terminolojisi Rehberi
+                </h1>
+                <p class="text-lg text-gray-600 mb-4">Türkiye'nin En Kapsamlı Peloton Kılavuzu</p>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 inline-block">
+                    <p class="text-blue-800 font-medium">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Bisiklet yarışlarının zengin kültürünü, terminolojisini ve tarihini keşfedin
+                    </p>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Executive Summary -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="bg-blue-50 rounded-lg p-8 border-l-4 border-blue-500">
-                <h2 class="text-2xl font-bold mb-4 text-blue-800">
-                    <i class="fas fa-chart-line mr-3"></i>Yönetici Özeti
-                </h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600 mb-2">15-20%</div>
-                        <div class="text-sm text-gray-600">Son 5 yılda genel hız artışı</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-green-600 mb-2">7.11 W/kg</div>
-                        <div class="text-sm text-gray-600">Pogačar'ın 2025 rekor güç çıkışı</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-red-600 mb-2">34 saniye</div>
-                        <div class="text-sm text-gray-600">Maraton dünya rekorundaki iyileştirme</div>
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="#temel-terminoloji" class="nav-button">🎯 Temel Terminoloji</a>
+                <a href="#buyuk-turlar" class="nav-button">🏆 Büyük Turlar</a>
+                <a href="#anit-yarislar" class="nav-button">🏛️ Anıt Yarışlar</a>
+                <a href="#tek-gunluk-klasikler" class="nav-button">🏁 Tek Günlük Klasikler</a>
+                <a href="#ikonik-tirmanislar" class="nav-button">⛰️ İkonik Tırmanışlar</a>
+                <a href="#parke-tasli-klasikler" class="nav-button">🧱 Parke Taşlı Klasikler</a>
+                <a href="#modern-yildizlar" class="nav-button">🌟 Modern Yıldızlar</a>
+                <a href="#tarihi-efsaneler" class="nav-button">👑 Tarihi Efsaneler</a>
+                <a href="#yazilmayan-kurallar" class="nav-button">🤝 Yazılmayan Kurallar</a>
+                <a href="#ozel-davranislar" class="nav-button">🍼 Özel Davranışlar</a>
+                <a href="#bisiklet-kulturu" class="nav-button">🎭 Bisiklet Kültürü</a>
+                <a href="#takim-rolleri" class="nav-button">🏃‍♂️ Takım Rolleri</a>
+                <a href="#peloton-dinamikleri" class="nav-button">🎪 Peloton Dinamikleri</a>
             </div>
         </div>
-    </section>
+    </nav>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8">
-
-        <!-- Section 1: Speed Increase Data -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-tachometer-alt mr-3 text-blue-600"></i>
-                1. Bisiklet Sporlarındaki Hız Artışı Verileri
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- Temel Terminoloji -->
+        <section id="temel-terminoloji" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🎯</span>Temel Peloton Terminolojisi
             </h2>
             
-            <!-- Tour de France Speed Trends -->
-            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-                <h3 class="text-2xl font-semibold mb-6">Tour de France Ortalama Hız Trendi (2020-2025)</h3>
-                <div class="chart-container">
-                    <canvas id="tourSpeedChart"></canvas>
-                </div>
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div class="legal p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">2025 Güncel Durum</h4>
-                        <ul class="space-y-1 text-sm">
-                            <li>• İlk 16 etap: <strong>43.8 km/h</strong> ortalama (Pogačar)</li>
-                            <li>• Vingegaard'dan <strong>4:15</strong> önde</li>
-                            <li>• Hautacam'da 6.74 W/kg güç çıkışı</li>
-                        </ul>
+            <div class="term-definition">
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">PELOTON</h3>
+                <p><strong>Tanım:</strong> Yarış sırasında birlikte hareket eden ana bisikletçi grubu</p>
+                <p><strong>Türkçe Karşılığı:</strong> Ana grup, sürü</p>
+                <p><strong>Kökeni:</strong> Fransızca "top, küme" anlamında</p>
+                <p><strong>Kullanım:</strong> Pelotonun hızını kontrol etmek takım taktiklerinin merkezindedir</p>
+            </div>
+
+            <div class="term-definition">
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">DOMESTIQUE (Domestik)</h3>
+                <p><strong>Tanım:</strong> Takım liderini desteklemek için çalışan yardımcı bisikletçi</p>
+                <p><strong>Türkçe Karşılığı:</strong> Hizmetli, destek bisikletçisi</p>
+                <p><strong>Görevleri:</strong> Su taşıma, rüzgar perdesi oluşturma, tempolu pedallama</p>
+                <p><strong>Önem:</strong> Takım başarısının gizli kahramanları</p>
+            </div>
+
+            <div class="term-definition">
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">TEMPO</h3>
+                <p><strong>Tanım:</strong> Yarışta sürdürülen sabit pedallama hızı</p>
+                <p><strong>Kullanım:</strong> "Yüksek tempo tutmak", "tempoyu düşürmek"</p>
+                <p><strong>Taktiği:</strong> Rakipleri yormak veya grubu kontrol etmek için kullanılır</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4 class="font-semibold text-gray-800 mb-2">💡 Önemli Not</h4>
+                <p>Bu terimler bisiklet yarışlarının temelini oluşturur ve profesyonel yarışları anlamak için şarttır.</p>
+            </div>
+        </section>
+
+        <!-- Büyük Turlar -->
+        <section id="buyuk-turlar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🏆</span>Büyük Turlar (Grand Tours)
+            </h2>
+
+            <div class="classic-card">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">
+                    <span class="country-flag">🇫🇷</span>TOUR DE FRANCE
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Başlangıç:</strong> 1903</p>
+                        <p><strong>Dönem:</strong> Temmuz (3 hafta, 21 etap)</p>
+                        <p><strong>Statü:</strong> En prestijli bisiklet yarışı</p>
+                        <p><strong>Maillot Jaune:</strong> Sarı forma (genel klasman lideri)</p>
                     </div>
-                    <div class="suspicious p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Giro d'Italia 2025</h4>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Simon Yates: <strong>41.73 km/h</strong> (kazanan)</li>
-                            <li>• Finestre'de 6.20 W/kg rekor performans</li>
-                            <li>• İkinci en hızlı Giro tarihi</li>
-                        </ul>
+                    <div>
+                        <p><strong>Özellik:</strong> "La Grande Boucle" (Büyük Tur) olarak bilinir</p>
+                        <p><strong>Mesafe:</strong> ~3,500 km</p>
+                        <p><strong>Etap Çeşitleri:</strong> Düz, dağlık, bireysel zamana karşı</p>
+                    </div>
+                </div>
+                
+                <h4 class="font-semibold text-gray-800 mt-4 mb-2">Özel Klasmanlar:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-500">
+                        <strong>Maillot Jaune (Sarı):</strong> Genel klasman lideri
+                    </div>
+                    <div class="bg-green-100 p-3 rounded border-l-4 border-green-500">
+                        <strong>Maillot Vert (Yeşil):</strong> Sprint puanları lideri
+                    </div>
+                    <div class="bg-red-100 p-3 rounded border-l-4 border-red-500">
+                        <strong>Maillot à Pois (Benekli):</strong> Dağlar kralı
+                    </div>
+                    <div class="bg-blue-100 p-3 rounded border-l-4 border-blue-500">
+                        <strong>Maillot Blanc (Beyaz):</strong> En iyi genç bisikletçi
                     </div>
                 </div>
             </div>
 
-            <!-- Power Output Comparison -->
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <h3 class="text-2xl font-semibold mb-6">2024-2025 Elite Performans Karşılaştırması</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full border-collapse">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="border p-3 text-left">Sporcu</th>
-                                <th class="border p-3 text-center">Yıl</th>
-                                <th class="border p-3 text-center">W/kg</th>
-                                <th class="border p-3 text-center">Süre</th>
-                                <th class="border p-3 text-center">Tırmanış</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border p-3">
-                                    <div class="flex items-center">
-                                        <div class="performance-bar bg-gradient-to-r from-yellow-400 to-yellow-600" style="width: 100px;">
-                                            <div style="background: linear-gradient(to right, #fbbf24, #f59e0b); width: 100%; height: 100%; border-radius: 10px;"></div>
-                                        </div>
-                                        <strong>Tadej Pogačar</strong>
-                                    </div>
-                                </td>
-                                <td class="border p-3 text-center">2024</td>
-                                <td class="border p-3 text-center font-bold text-red-600">6.98</td>
-                                <td class="border p-3 text-center">39:50</td>
-                                <td class="border p-3 text-center">Plateau de Beille</td>
-                            </tr>
-                            <tr>
-                                <td class="border p-3">
-                                    <div class="flex items-center">
-                                        <div class="performance-bar bg-gradient-to-r from-yellow-400 to-yellow-600" style="width: 95px;">
-                                            <div style="background: linear-gradient(to right, #fbbf24, #f59e0b); width: 100%; height: 100%; border-radius: 10px;"></div>
-                                        </div>
-                                        <strong>Tadej Pogačar</strong>
-                                    </div>
-                                </td>
-                                <td class="border p-3 text-center">2025</td>
-                                <td class="border p-3 text-center font-bold text-red-600">7.11</td>
-                                <td class="border p-3 text-center">28:26</td>
-                                <td class="border p-3 text-center">Valmeinier 1800</td>
-                            </tr>
-                            <tr>
-                                <td class="border p-3">
-                                    <div class="flex items-center">
-                                        <div class="performance-bar bg-gradient-to-r from-red-400 to-red-600" style="width: 90px;">
-                                            <div style="background: linear-gradient(to right, #f87171, #dc2626); width: 100%; height: 100%; border-radius: 10px;"></div>
-                                        </div>
-                                        <strong>Jonas Vingegaard</strong>
-                                    </div>
-                                </td>
-                                <td class="border p-3 text-center">2024</td>
-                                <td class="border p-3 text-center font-bold text-orange-600">6.85</td>
-                                <td class="border p-3 text-center">40:58</td>
-                                <td class="border p-3 text-center">Plateau de Beille</td>
-                            </tr>
-                            <tr>
-                                <td class="border p-3">
-                                    <div class="flex items-center">
-                                        <div class="performance-bar bg-gradient-to-r from-red-400 to-red-600" style="width: 85px;">
-                                            <div style="background: linear-gradient(to right, #f87171, #dc2626); width: 100%; height: 100%; border-radius: 10px;"></div>
-                                        </div>
-                                        <strong>Jonas Vingegaard</strong>
-                                    </div>
-                                </td>
-                                <td class="border p-3 text-center">2025</td>
-                                <td class="border p-3 text-center font-bold text-orange-600">6.29</td>
-                                <td class="border p-3 text-center">35:11</td>
-                                <td class="border p-3 text-center">Hautacam</td>
-                            </tr>
-                            <tr>
-                                <td class="border p-3">
-                                    <div class="flex items-center">
-                                        <div class="performance-bar bg-gradient-to-r from-green-400 to-green-600" style="width: 80px;">
-                                            <div style="background: linear-gradient(to right, #4ade80, #16a34a); width: 100%; height: 100%; border-radius: 10px;"></div>
-                                        </div>
-                                        <strong>Simon Yates</strong>
-                                    </div>
-                                </td>
-                                <td class="border p-3 text-center">2025</td>
-                                <td class="border p-3 text-center font-bold text-green-600">6.20</td>
-                                <td class="border p-3 text-center">59:23</td>
-                                <td class="border p-3 text-center">Colle delle Finestre</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="classic-card">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">
+                    <span class="country-flag">🇮🇹</span>GIRO D'ITALIA
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Başlangıç:</strong> 1909</p>
+                        <p><strong>Dönem:</strong> Mayıs (3 hafta, 21 etap)</p>
+                        <p><strong>Maglia Rosa:</strong> Pembe forma (genel klasman lideri)</p>
+                        <p><strong>Özellik:</strong> En zorlu dağ etaplarıyla ünlü</p>
+                    </div>
+                    <div>
+                        <p><strong>Cima Coppi:</strong> En yüksek nokta ödülü</p>
+                        <p><strong>Trofeo Fuga:</strong> En aktif bisikletçi</p>
+                        <p><strong>Caratteristik:</strong> İtalyan Alpleri'nin zorlu geçitleri</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="classic-card">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">
+                    <span class="country-flag">🇪🇸</span>VUELTA A ESPAÑA
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Başlangıç:</strong> 1935</p>
+                        <p><strong>Dönem:</strong> Ağustos-Eylül (3 hafta, 21 etap)</p>
+                        <p><strong>Maillot Rojo:</strong> Kırmızı forma (genel klasman lideri)</p>
+                        <p><strong>Özellik:</strong> En genç büyük tur</p>
+                    </div>
+                    <div>
+                        <p><strong>Karakter:</strong> En dağlık grand tour</p>
+                        <p><strong>Hava:</strong> Yaz sıcağı, çok rüzgarlı</p>
+                        <p><strong>Son Hafta:</strong> Genellikle en zor</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Running Records -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-running mr-3 text-green-600"></i>
-                2. Koşu Sporlarındaki Rekor Patlaması
+        <!-- Anıt Yarışlar -->
+        <section id="anit-yarislar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🏛️</span>Anıt Yarışlar (Monuments)
             </h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">Maraton Dünya Rekoru Gelişimi</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
-                            <span>2018 - Eliud Kipchoge (Berlin)</span>
-                            <span class="font-bold">2:01:39</span>
-                        </div>
-                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
-                            <span>2022 - Eliud Kipchoge (Berlin)</span>
-                            <span class="font-bold">2:01:09</span>
-                        </div>
-                        <div class="flex justify-between items-center p-3 bg-green-100 rounded border-l-4 border-green-500">
-                            <span>2023 - Kelvin Kiptum (Chicago)</span>
-                            <span class="font-bold text-green-700">2:00:35</span>
-                        </div>
+            <p class="text-gray-700 mb-6">Bisiklet yarışçılığının en prestijli 5 tek günlük yarışı:</p>
+
+            <div class="monument-card">
+                <h3 class="text-2xl font-bold text-orange-800 mb-3">
+                    <span class="country-flag">🇮🇹</span>1. MILAN-SAN REMO
+                </h3>
+                <p><strong>İtalyanca Adı:</strong> La Primavera (İlkbahar), La Classicissima</p>
+                <p><strong>Mesafe:</strong> ~300 km</p>
+                <p><strong>Özellik:</strong> Sprinterların klasiği</p>
+                <p><strong>Tarihi:</strong> 1907'den beri düzenleniyor</p>
+                <p><strong>Karakter:</strong> Uzun ama nispeten düz, son kilometrelerde stratejik tırmanışlar</p>
+            </div>
+
+            <div class="monument-card">
+                <h3 class="text-2xl font-bold text-orange-800 mb-3">
+                    <span class="country-flag">🇧🇪</span>2. TOUR OF FLANDERS
+                </h3>
+                <p><strong>Flemenkçe Adı:</strong> Ronde van Vlaanderen</p>
+                <p><strong>Özellik:</strong> Dar, kısa, taşlı yokuşlar (hellingen)</p>
+                <p><strong>Kültür:</strong> Belçika'nın ulusal bayramı gibi kutlanır</p>
+                <p><strong>Hellingen:</strong> Oude Kwaremont, Paterberg, Koppenberg</p>
+            </div>
+
+            <div class="monument-card">
+                <h3 class="text-2xl font-bold text-orange-800 mb-3">
+                    <span class="country-flag">🇫🇷</span>3. PARIS-ROUBAIX
+                </h3>
+                <p><strong>Lakap:</strong> "L'Enfer du Nord" (Kuzey'in Cehennemi)</p>
+                <p><strong>Özellik:</strong> Uzun pavé (taş yol) bölümleri</p>
+                <p><strong>Bitiş:</strong> Roubaix Velodromu</p>
+                <p><strong>Statü:</strong> "Klasiklerin Kraliçesi"</p>
+                <p><strong>2024 Pavé:</strong> 55.7 km taş yol (30 yılın en fazlası)</p>
+            </div>
+
+            <div class="monument-card">
+                <h3 class="text-2xl font-bold text-orange-800 mb-3">
+                    <span class="country-flag">🇧🇪</span>4. LIÈGE-BASTOGNE-LIÈGE
+                </h3>
+                <p><strong>Lakap:</strong> "La Doyenne" (Yaşlı Bayan)</p>
+                <p><strong>Özellik:</strong> En eski klasik (1892)</p>
+                <p><strong>Karakter:</strong> Ardennes'in keskin yokuşları</p>
+                <p><strong>Tırmanışlar:</strong> Côte de la Redoute, Côte de Saint-Nicolas</p>
+            </div>
+
+            <div class="monument-card">
+                <h3 class="text-2xl font-bold text-orange-800 mb-3">
+                    <span class="country-flag">🇮🇹</span>5. GIRO DI LOMBARDIA
+                </h3>
+                <p><strong>Lakap:</strong> "Il Lombardia", "Döşen Yaprakların Yarışı"</p>
+                <p><strong>Dönem:</strong> Ekim sonu</p>
+                <p><strong>Özellik:</strong> Como Gölü çevresindeki dağlık güzergah</p>
+                <p><strong>Tırmanışlar:</strong> Madonna del Ghisallo, Civiglio</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4 class="font-semibold text-gray-800 mb-2">🏆 Monument Rekortmenleri</h4>
+                <p><strong>En çok Monument zaferi:</strong> Eddy Merckx (19 zafer)</p>
+                <p><strong>Tüm 5'ini kazanan sadece 3 kişi:</strong> Rik Van Looy, Eddy Merckx, Roger De Vlaeminck</p>
+            </div>
+        </section>
+
+        <!-- Tek Günlük Klasikler -->
+        <section id="tek-gunluk-klasikler" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🏁</span>Tek Günlük Klasik Yarışlar
+            </h2>
+
+            <h3 class="subsection-title">🌸 Bahar Klasikleri</h3>
+            
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">OMLOOP HET NIEUWSBLAD</h4>
+                <p><strong>Dönem:</strong> Şubat sonu - Bahar sezonunun açılışı</p>
+                <p><strong>Mesafe:</strong> ~200 km</p>
+                <p><strong>Özellik:</strong> 13 tırmanış, 3 pavé sektörü</p>
+                <p><strong>Lakap:</strong> "Bahar'ın açılışı"</p>
+            </div>
+
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">STRADE BIANCHE</h4>
+                <p><strong>Konum:</strong> Toskana, İtalya</p>
+                <p><strong>Yüzey:</strong> Sterrato (beyaz çakıl yollar)</p>
+                <p><strong>Bitiş:</strong> Siena'da Piazza del Campo</p>
+                <p><strong>Statü:</strong> "6. Monument" adayı</p>
+                <p><strong>Özellik:</strong> 11 çakıl sektörü, 63km toplam</p>
+            </div>
+
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">E3 SAXO BANK CLASSIC</h4>
+                <p><strong>Eski Adı:</strong> E3 Harelbeke</p>
+                <p><strong>Mesafe:</strong> ~200 km</p>
+                <p><strong>Hellingen:</strong> 17 tırmanış</p>
+                <p><strong>Anahtar Tırmanışlar:</strong> Oude Kwaremont, Paterberg</p>
+            </div>
+
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">GENT-WEVELGEM</h4>
+                <p><strong>Lakap:</strong> "Sprinter's Classic"</p>
+                <p><strong>Mesafe:</strong> 250+ km</p>
+                <p><strong>Rüzgar Faktörü:</strong> Crosswind kritik</p>
+                <p><strong>Anahtar Bölüm:</strong> Kemmelberg dizisi</p>
+            </div>
+
+            <h3 class="subsection-title">🍂 Sonbahar Klasikleri</h3>
+            
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">MILANO-TORINO</h4>
+                <p><strong>Çeviri:</strong> "Ölü Yaprakların Klasiği"</p>
+                <p><strong>Yeniden Canlanma:</strong> Sonbahar klasiği olarak geri döndü</p>
+                <p><strong>Bitiş:</strong> Torino üzerindeki Superga tırmanışı</p>
+                <p><strong>Karakter:</strong> Tırmanışçıların klasiği</p>
+            </div>
+
+            <h3 class="subsection-title">🏔️ Ardenler Klasikleri</h3>
+            
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">AMSTEL GOLD RACE</h4>
+                <p><strong>Konum:</strong> Hollanda</p>
+                <p><strong>Özellik:</strong> Çok sayıda kısa tırmanış</p>
+                <p><strong>Bitiş:</strong> Cauberg tırmanışı (geleneksel)</p>
+            </div>
+
+            <div class="classic-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">FLÈCHE WALLONNE</h4>
+                <p><strong>Çeviri:</strong> "Valon Oku"</p>
+                <p><strong>İkonik Bitiş:</strong> Mur de Huy (%26 eğim)</p>
+                <p><strong>Özellik:</strong> Puncheur'ların yarışı</p>
+            </div>
+        </section>
+
+        <!-- İkonik Tırmanışlar -->
+        <section id="ikonik-tirmanislar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">⛰️</span>İkonik Tırmanışlar ve KOM Rekorları
+            </h2>
+
+            <h3 class="subsection-title">🇫🇷 Tour de France Efsane Zirveleri</h3>
+
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">ALPE D'HUEZ</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">37'35"</div>
+                        <div class="text-sm text-gray-600">KOM Rekoru</div>
+                        <div class="text-xs text-gray-500">Marco Pantani (1997)</div>
                     </div>
-                    <div class="mt-4 p-3 bg-blue-50 rounded">
-                        <p class="text-sm"><strong>İyileştirme:</strong> 34 saniye (2022'den 2023'e)</p>
-                        <p class="text-sm"><strong>Ayakkabı:</strong> Nike Alphafly 3</p>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-blue-600">14.5 km</div>
+                        <div class="text-sm text-gray-600">Mesafe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-green-600">%8.1</div>
+                        <div class="text-sm text-gray-600">Ortalama Eğim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-purple-600">21</div>
+                        <div class="text-sm text-gray-600">Viraj Sayısı</div>
                     </div>
                 </div>
+                <p><strong>Lakap:</strong> "Bisikletin Meccası"</p>
+                <p><strong>Özellik:</strong> Her virajda farklı şampiyon ismi</p>
+                <p><strong>Tour'da:</strong> 1952'den beri 32 kez kullanıldı</p>
+            </div>
 
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">10.000m Dünya Rekoru</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
-                            <span>2005 - Kenenisa Bekele</span>
-                            <span class="font-bold">26:17.53</span>
-                        </div>
-                        <div class="flex justify-between items-center p-3 bg-green-100 rounded border-l-4 border-green-500">
-                            <span>2020 - Joshua Cheptegei</span>
-                            <span class="font-bold text-green-700">26:11.00</span>
-                        </div>
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">MONT VENTOUX</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">53'47"</div>
+                        <div class="text-sm text-gray-600">Yeni Rekord</div>
+                        <div class="text-xs text-gray-500">Tadej Pogačar (2025)</div>
                     </div>
-                    <div class="mt-4 p-3 bg-blue-50 rounded">
-                        <p class="text-sm"><strong>İyileştirme:</strong> 6.53 saniye</p>
-                        <p class="text-sm"><strong>Ayakkabı:</strong> Nike ZoomX Dragonfly</p>
-                        <p class="text-sm"><strong>Karbon plaka teknolojisi</strong> ile kırıldı</p>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">55'51"</div>
+                        <div class="text-sm text-gray-600">Eski Rekord</div>
+                        <div class="text-xs text-gray-500">Iban Mayo (2004)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-blue-600">15.9 km</div>
+                        <div class="text-sm text-gray-600">Mesafe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-purple-600">1,912m</div>
+                        <div class="text-sm text-gray-600">Yükseklik</div>
+                    </div>
+                </div>
+                <p><strong>Lakap:</strong> "Çıplak Dağ", "Provence'in Devi"</p>
+                <p><strong>Özellik:</strong> Ağaçsız zirvesi, güçlü rüzgarlar</p>
+                <p><strong>Tarihi:</strong> Tom Simpson'ın 1967'de hayatını kaybettiği yer</p>
+                <p><strong>Üç Güzergah:</strong> Bédoin (en zor), Malaucène, Sault</p>
+            </div>
+
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">COL DU TOURMALET</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">45'35"</div>
+                        <div class="text-sm text-gray-600">Yeni Rekord</div>
+                        <div class="text-xs text-gray-500">Vingegaard/Pogačar (2023)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-blue-600">17 km</div>
+                        <div class="text-sm text-gray-600">Mesafe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-green-600">%7.4</div>
+                        <div class="text-sm text-gray-600">Ortalama Eğim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-purple-600">2,115m</div>
+                        <div class="text-sm text-gray-600">Yükseklik</div>
+                    </div>
+                </div>
+                <p><strong>Lakap:</strong> "Pireneler Kraliçesi"</p>
+                <p><strong>Tour'da:</strong> 89 kez kullanıldı (rekor)</p>
+                <p><strong>Özellik:</strong> 30 yıllık rekor 2023'te kırıldı</p>
+            </div>
+
+            <h3 class="subsection-title">🇮🇹 Giro d'Italia Tırmanış Canavarları</h3>
+
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">PASSO DELLO STELVIO</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">75-90'</div>
+                        <div class="text-sm text-gray-600">Profesyonel Zaman</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-blue-600">24.9 km</div>
+                        <div class="text-sm text-gray-600">Mesafe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-green-600">%7.4</div>
+                        <div class="text-sm text-gray-600">Ortalama Eğim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-purple-600">2,757m</div>
+                        <div class="text-sm text-gray-600">En Yüksek Asfalt</div>
+                    </div>
+                </div>
+                <p><strong>Özellik:</strong> 48 viraj, ikonik zigzag yol</p>
+                <p><strong>Statü:</strong> Avrupa'nın en yüksek asfalt geçidi</p>
+            </div>
+
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">MONTE ZONCOLAN</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">%22</div>
+                        <div class="text-sm text-gray-600">Maksimum Eğim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-green-600">%11.9</div>
+                        <div class="text-sm text-gray-600">Ortalama Eğim</div>
+                    </div>
+                </div>
+                <p><strong>Lakap:</strong> "Il Mostro" (Canavar)</p>
+                <p><strong>Özellik:</strong> Giro'nun en zorlu tırmanışı</p>
+            </div>
+
+            <h3 class="subsection-title">🇪🇸 Vuelta España Zorlu Çıkışları</h3>
+
+            <div class="climb-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">ALTO DE L'ANGLIRU</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">41'55"</div>
+                        <div class="text-sm text-gray-600">Rekord</div>
+                        <div class="text-xs text-gray-500">Roberto Heras (2000)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">41'24"</div>
+                        <div class="text-sm text-gray-600">Modern Rekord</div>
+                        <div class="text-xs text-gray-500">Roglič/Vingegaard (2023)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-blue-600">12.5 km</div>
+                        <div class="text-sm text-gray-600">Mesafe</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-bold text-red-600">%23.5</div>
+                        <div class="text-sm text-gray-600">Maksimum Eğim</div>
+                    </div>
+                </div>
+                <p><strong>Lakap:</strong> "Asturias Canavarı"</p>
+                <p><strong>Özellik:</strong> Profesyonel bisikletçiliğin en zor tırmanışı</p>
+                <p><strong>Karakter:</strong> 16 viraj, ortalama %10.1 eğim</p>
+            </div>
+        </section>
+
+        <!-- Parke Taşlı Klasikler -->
+        <section id="parke-tasli-klasikler" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🧱</span>Parke Taşlı Klasikler
+            </h2>
+
+            <h3 class="subsection-title">🗂️ Pavé Terminolojisi</h3>
+            
+            <div class="term-definition">
+                <h4 class="text-lg font-semibold text-blue-800">PAVÉ (Parke Taşı)</h4>
+                <p><strong>Fransızca:</strong> "Döşenmiş" anlamında</p>
+                <p><strong>Flemenkçe:</strong> Kasseien, Kinderkopjes ("çocuk kafaları")</p>
+                <p><strong>İngilizce:</strong> Cobblestones, Setts</p>
+                <p><strong>Özellik:</strong> Büyük, düzensiz doğal taşlardan yapılmış yol</p>
+            </div>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Ünlü Pavé Sektörleri:</h4>
+            
+            <div class="highlight-box">
+                <h5 class="font-bold text-blue-800">ARENBERG FOREST (Trouée d'Arenberg)</h5>
+                <p><strong>Sektör Numarası:</strong> 19 (Paris-Roubaix)</p>
+                <p><strong>Uzunluk:</strong> 2.3 km</p>
+                <p><strong>Zorluk:</strong> 5 yıldız</p>
+                <p><strong>Lakap:</strong> "Cehennemin Girişi"</p>
+            </div>
+
+            <div class="highlight-box">
+                <h5 class="font-bold text-blue-800">CARREFOUR DE L'ARBRE</h5>
+                <p><strong>Sektör Numarası:</strong> 4</p>
+                <p><strong>Uzunluk:</strong> 2.1 km</p>
+                <p><strong>Zorluk:</strong> 5 yıldız</p>
+                <p><strong>Pozisyon:</strong> Son 17 km</p>
+                <p><strong>Kritik:</strong> Yarış kıranı final sektör</p>
+            </div>
+
+            <h3 class="subsection-title">🇧🇪 Flemenkçe Terminoloji</h3>
+            
+            <div class="term-definition">
+                <h4 class="text-lg font-semibold text-blue-800">HELLINGEN (Tırmanışlar)</h4>
+                <p><strong>Tanım:</strong> Kısa, dik, genelde cobbled tırmanışlar</p>
+                <p><strong>Özellikler:</strong> 500m-2km arası, %10-20 ortalama eğim</p>
+                <p><strong>Yüzey:</strong> Cobbles veya beton</p>
+            </div>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Efsane Hellingen:</h4>
+            
+            <div class="classic-card">
+                <h5 class="text-xl font-bold text-blue-800">MUUR VAN GERAARDSBERGEN (Duvar)</h5>
+                <p><strong>Uzunluk:</strong> 1.2 km</p>
+                <p><strong>Eğim:</strong> %7.8 ortalama, %20 maksimum</p>
+                <p><strong>Tarih:</strong> Tour of Flanders'ın eski finali</p>
+                <p><strong>Özellik:</strong> Tepede şapel</p>
+            </div>
+
+            <div class="classic-card">
+                <h5 class="text-xl font-bold text-blue-800">KOPPENBERG</h5>
+                <p><strong>Uzunluk:</strong> 600m</p>
+                <p><strong>Eğim:</strong> %11.1 ortalama, %22 maksimum</p>
+                <p><strong>Yüzey:</strong> Korkunç cobbles</p>
+                <p><strong>Ün:</strong> Bisikletçilerin yürümek zorunda kaldığı tek yer</p>
+            </div>
+
+            <div class="classic-card">
+                <h5 class="text-xl font-bold text-blue-800">OUDE KWAREMONT</h5>
+                <p><strong>Uzunluk:</strong> 2.2 km</p>
+                <p><strong>Kullanım:</strong> Modern Flanders climax</p>
+                <p><strong>Strateji:</strong> Decisive attack point</p>
+                <p><strong>İkili:</strong> Paterberg ile birlikte finale</p>
+            </div>
+
+            <div class="classic-card">
+                <h5 class="text-xl font-bold text-blue-800">PATERBERG</h5>
+                <p><strong>Uzunluk:</strong> 400m</p>
+                <p><strong>Eğim:</strong> %12.9 ortalama</p>
+                <p><strong>Pozisyon:</strong> Son 13 km</p>
+                <p><strong>Taktik:</strong> Final saldırı noktası</p>
+            </div>
+        </section>
+
+        <!-- Modern Yıldızlar -->
+        <section id="modern-yildizlar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🌟</span>2025 Modern Peloton Yıldızları
+            </h2>
+
+            <h3 class="subsection-title">🏆 Grand Tour Adayları</h3>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇸🇮</span>TADEJ POGAČAR - UAE Team Emirates
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 26 (1998 doğumlu)</p>
+                        <p><strong>Palmares:</strong> 3× Tour de France, 1× Giro d'Italia</p>
+                        <p><strong>Uzmanlık:</strong> All-rounder supreme, explosive climber</p>
+                        <p><strong>2024 Highlights:</strong> Tour-Giro double, 6 Monuments</p>
+                    </div>
+                    <div>
+                        <p><strong>Zayıflıklar:</strong> Aşırı sıcak, çok uzun ITT</p>
+                        <p><strong>İmza Hareketi:</strong> Uzun mesafe saldırıları (50+ km)</p>
+                        <p><strong>Ekipman:</strong> Colnago V4Rs, Shimano Dura-Ace</p>
+                        <p><strong>Lakap:</strong> "The Cannibal II"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇩🇰</span>JONAS VINGEGAARD - Team Visma-Lease a Bike
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 28 (1996 doğumlu)</p>
+                        <p><strong>Palmares:</strong> 2× Tour de France winner</p>
+                        <p><strong>Uzmanlık:</strong> Pure climber, TT dramatically improved</p>
+                        <p><strong>Güçlü Yönler:</strong> Yükseklik, sürekli tırmanış, sıcaklık</p>
+                    </div>
+                    <div>
+                        <p><strong>2024 Sezon:</strong> Injury comeback, still competitive</p>
+                        <p><strong>Destek Takımı:</strong> Sepp Kuss, Matteo Jorgenson</p>
+                        <p><strong>İmza:</strong> Poker face, late attacks</p>
+                        <p><strong>Geçmiş:</strong> Eski balık işleme işçisi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇧🇪</span>REMCO EVENEPOEL - Soudal Quick-Step
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 25 (1999 doğumlu)</p>
+                        <p><strong>Palmares:</strong> 1× Vuelta España, Olympic Double Gold</p>
+                        <p><strong>Uzmanlık:</strong> Time trial virtuoso, explosive climber</p>
+                        <p><strong>2024 Highlights:</strong> Olympic road race + TT champion</p>
+                    </div>
+                    <div>
+                        <p><strong>İmza Ekipmanı:</strong> Specialized Shiv TT bike</p>
+                        <p><strong>Güç Rakamları:</strong> 1500W+ peak, 70+ km/h TT speed</p>
+                        <p><strong>Karakter:</strong> Technical perfection, risk taker</p>
+                        <p><strong>Zayıflık:</strong> Ultra-high mountains, crash recovery</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🏛️ Klasik Uzmanları</h3>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇳🇱</span>MATHIEU VAN DER POEL - Alpecin-Deceuninck
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 30 (1995 doğumlu)</p>
+                        <p><strong>Triple Threat:</strong> Road, CX, MTB world champion</p>
+                        <p><strong>Uzmanlık:</strong> Explosive power, tactical intelligence</p>
+                        <p><strong>2024 Highlights:</strong> Tour of Flanders winner</p>
+                    </div>
+                    <div>
+                        <p><strong>Fiziksel:</strong> 1800W+ sprint power, exceptional handling</p>
+                        <p><strong>Zayıflık:</strong> Grand Tour stage races</p>
+                        <p><strong>Ekipman:</strong> Canyon Aeroad, SRAM Red</p>
+                        <p><strong>Miras:</strong> Adrie van der Poel'un oğlu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇧🇪</span>WOUT VAN AERT - Team Visma-Lease a Bike
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 30 (1994 doğumlu)</p>
+                        <p><strong>Rol:</strong> Super domestique + classics star</p>
+                        <p><strong>Uzmanlık:</strong> Versatility king, crosswind master</p>
+                        <p><strong>2024 Highlights:</strong> Multiple Tour stage wins</p>
+                    </div>
+                    <div>
+                        <p><strong>Hizmetler:</strong> Vingegaard'ın chief lieutenant</p>
+                        <p><strong>CX Geçmişi:</strong> 3× Cyclocross world champion</p>
+                        <p><strong>İmza:</strong> Green jersey competitions</p>
+                        <p><strong>Zayıflık:</strong> Ultra-high mountains</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🏃‍♂️ Pure Sprinters</h3>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇧🇪</span>JASPER PHILIPSEN - Alpecin-Deceuninck
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 27 (1998 doğumlu)</p>
+                        <p><strong>2024 Stats:</strong> 4 Tour de France stage wins</p>
+                        <p><strong>Leadout:</strong> Mathieu van der Poel often leads</p>
+                    </div>
+                    <div>
+                        <p><strong>Peak Power:</strong> 1700W+ for 15 seconds</p>
+                        <p><strong>Uzmanlık:</strong> Flat bunch sprints, positioning</p>
+                        <p><strong>Stil:</strong> Patient, powerful finishing kick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇳🇱</span>DYLAN GROENEWEGEN - Jayco AlUla
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 32 (1993 doğumlu)</p>
+                        <p><strong>Deneyim:</strong> Veteran sprinter, Tour stage winner</p>
+                        <p><strong>2024 Highlight:</strong> Photo finish wins vs Philipsen</p>
+                    </div>
+                    <div>
+                        <p><strong>Güçlü Yön:</strong> Technical sprint finishes</p>
+                        <p><strong>Leadout Team:</strong> Strong Australian support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-2xl font-bold text-blue-800 mb-2">
+                    <span class="country-flag">🇪🇷</span>BINIAM GIRMAY - Intermarché-Wanty
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p><strong>Yaş:</strong> 24 (2000 doğumlu)</p>
+                        <p><strong>Tarihi:</strong> First Black African Tour stage winner</p>
+                        <p><strong>2024 Breakthrough:</strong> Green jersey competitor</p>
+                    </div>
+                    <div>
+                        <p><strong>Gelecek Yıldızı:</strong> Huge potential, improving rapidly</p>
+                        <p><strong>Stil:</strong> Intelligent positioning, strong kick</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Legal Technology Improvements -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-cogs mr-3 text-green-600"></i>
-                3. Yasal Teknolojik Gelişmeler
+        <!-- Tarihi Efsaneler -->
+        <section id="tarihi-efsaneler" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">👑</span>Tarihi Efsaneler ve Ünlü Sözleri
             </h2>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Cycling Technology -->
-                <div class="legal rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">
-                        <i class="fas fa-bicycle mr-2"></i>Bisiklet Teknolojisi
+            <div class="quote-card">
+                <h4 class="text-xl font-bold text-orange-800 mb-2">EDDY MERCKX (Belçika)</h4>
+                <p class="text-lg mb-2">"Bisiklet yarışında ikinci olmak, ilk kaybeden olmaktır."</p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4 not-italic">
+                    <div>
+                        <p><strong>Lakap:</strong> "The Cannibal" (Yamyam)</p>
+                        <p><strong>Başarılar:</strong> 5 Tour, 5 Giro, 1 Vuelta, 19 Monument</p>
+                        <p><strong>Özellik:</strong> Tüm zamanların en iyisi</p>
+                    </div>
+                    <div>
+                        <p><strong>Rekor:</strong> Kariyerinde 525 zafer</p>
+                        <p><strong>Dönem:</strong> 1961-1978</p>
+                        <p><strong>Özellik:</strong> Her türlü yarışı kazandı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <h4 class="text-xl font-bold text-orange-800 mb-2">BERNARD HINAULT (Fransa)</h4>
+                <p class="text-lg mb-2">"Başkaları acı çektiğini görünce mutlu oluyorum, çünkü ben daha fazla acı çekebilirim."</p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4 not-italic">
+                    <div>
+                        <p><strong>Lakap:</strong> "The Badger" (Porsuk)</p>
+                        <p><strong>Başarılar:</strong> 5 Tour, 3 Giro, 2 Vuelta</p>
+                        <p><strong>Özellik:</strong> Son Fransız Tour galibi (1985)</p>
+                    </div>
+                    <div>
+                        <p><strong>Karakter:</strong> Sert, acımasız yarışçı</p>
+                        <p><strong>Dönem:</strong> 1970'ler-1980'ler</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <h4 class="text-xl font-bold text-orange-800 mb-2">MARCO PANTANI (İtalya)</h4>
+                <p class="text-lg mb-2">"Dağlarda kayboldum, kendimi buldum."</p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4 not-italic">
+                    <div>
+                        <p><strong>Lakap:</strong> "Il Pirata" (Korsan)</p>
+                        <p><strong>Başarılar:</strong> 1998 Tour-Giro double</p>
+                        <p><strong>Rekorlar:</strong> Alpe d'Huez (37'35"), Mont Ventoux</p>
+                    </div>
+                    <div>
+                        <p><strong>Stil:</strong> Eksplosif tırmanış uzmanı</p>
+                        <p><strong>Trajedi:</strong> 2004'te hayatını kaybetti</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <h4 class="text-xl font-bold text-orange-800 mb-2">MIGUEL INDURAIN (İspanya)</h4>
+                <p class="text-lg mb-2">"Bisiklet, yaşamın metaforudur. Dengede kalmak için hareket etmeye devam etmelisin."</p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4 not-italic">
+                    <div>
+                        <p><strong>Başarılar:</strong> Üst üste 5 Tour zaferi (1991-1995)</p>
+                        <p><strong>Özellik:</strong> Olağanüstü zamana karşı yarış yeteneği</p>
+                    </div>
+                    <div>
+                        <p><strong>Karakter:</strong> Sessiz, güçlü, stratejik</p>
+                        <p><strong>Fizik:</strong> 188cm, büyük akciğer kapasitesi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <h4 class="text-xl font-bold text-orange-800 mb-2">FAUSTO COPPI (İtalya)</h4>
+                <p class="text-lg mb-2">"Yaş sadece bir rakamdır. Önemli olan bacaklardaki ateştir."</p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4 not-italic">
+                    <div>
+                        <p><strong>Lakap:</strong> "Il Campionissimo" (Şampiyonların Şampiyonu)</p>
+                        <p><strong>Dönem:</strong> 1940-50'ler altın çağı</p>
+                        <p><strong>Özellik:</strong> İlk modern bisiklet süperstarı</p>
+                    </div>
+                    <div>
+                        <p><strong>Rekorlar:</strong> 5 Giro di Lombardia, 2 Tour</p>
+                        <p><strong>Stil:</strong> Şık, elegant tırmanış tarzı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4 class="font-semibold text-gray-800 mb-2">🏆 Tarihi Rekorlar</h4>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>En çok Tour zaferi:</strong> 5 (Hinault, Indurain, Merckx, Anquetil)</li>
+                    <li><strong>En çok Monument:</strong> 19 (Eddy Merckx)</li>
+                    <li><strong>Triple Crown:</strong> Dünya Şampiyonası + Monument + Grand Tour</li>
+                    <li><strong>En yaşlı Tour galibi:</strong> Firmin Lambot (36 yaş, 1922)</li>
+                    <li><strong>En genç Tour galibi:</strong> Henri Cornet (19 yaş, 1904)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Yazılmayan Kurallar -->
+        <section id="yazilmayan-kurallar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🤝</span>Yazılmayan Kurallar ve Peloton Etiği
+            </h2>
+
+            <h3 class="subsection-title">🤵 Centilmen Anlaşmaları</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-blue-800 mb-3">THE PATRON SYSTEM (Patron Sistemi)</h4>
+                <p><strong>Tanım:</strong> Peloton'un büyük saygı gören lideri</p>
+                <p><strong>Rol:</strong> Unwritten rules'ı uygulatan, barışı sağlayan</p>
+                <p><strong>Tarihsel Örnekler:</strong> Jacques Anquetil, Eddy Merckx, Bernard Hinault</p>
+                <p><strong>Modern:</strong> Fabian Cancellara (emekli), artık yoktan taze patron</p>
+                <p><strong>Güç:</strong> Peloton'u durdurabilir, tempo değiştirebilir</p>
+            </div>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">💛 Sarı Forma Ayrıcalıkları</h4>
+            
+            <div class="term-definition">
+                <h5 class="font-bold text-blue-800">Doğal İhtiyaç Protokolü</h5>
+                <p><strong>Kural:</strong> Sarı forma tuvalete gittiğinde saldırı yasak</p>
+                <p><strong>Prosedür:</strong> Lider durduğunda, peloton otomatik yavaşlar</p>
+                <p><strong>İhlal:</strong> Peloton tarafından sürdürülebilir misilleme</p>
+                <p><strong>İstisna:</strong> Final 20 km'de bu kural geçersiz</p>
+            </div>
+
+            <div class="term-definition">
+                <h5 class="font-bold text-blue-800">Mekanik Bekleme</h5>
+                <p><strong>Major Mechanical:</strong> Zincir kırılması, tekerlek değişimi → Beklenir</p>
+                <p><strong>Minor Issues:</strong> Vites ayarı, lastik basıncı → Beklenmez</p>
+                <p><strong>Crash:</strong> Kaza sonrası mutlaka beklenir</p>
+                <p><strong>Controversial:</strong> Nibali-Froome olayı (2015)</p>
+            </div>
+
+            <div class="term-definition">
+                <h5 class="font-bold text-blue-800">Beslenme Bölgesi Tarafsızlığı</h5>
+                <p><strong>Kural:</strong> Musette alımı sırasında atak yasak</p>
+                <p><strong>Süre:</strong> Beslenme bölgesinden 2-3 km sonraya kadar</p>
+                <p><strong>Benzetme:</strong> "Öğle yemeği molası" konsepti</p>
+                <p><strong>İhlal:</strong> Tüm peloton tarafından boykot</p>
+            </div>
+
+            <h3 class="subsection-title">⚖️ Misilleme Sistemi</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-red-600 mb-3">GÖZE GÖZ (EYE FOR AN EYE)</h4>
+                <p><strong>Prensip:</strong> Kural ihlali → Gelecekte misilleme</p>
+                <p><strong>Süre:</strong> Aylar, hatta yıllar sonra bile uygulanır</p>
+                <p><strong>Hedefler:</strong> İhlal eden takım/bisikletçi</p>
+                <p><strong>Örnek:</strong> Sky takımının ilk yıllarında yaşadıkları</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-red-600 mb-3">TOPLU CEZA (COLLECTIVE PUNISHMENT)</h4>
+                <p><strong>Uygulama:</strong> Tüm peloton birleşerek cezalandırma</p>
+                <p><strong>Yöntem:</strong> Tempo artışı, pozisyon vermeme</p>
+                <p><strong>Süre:</strong> O gün veya gelecek yarışlarda</p>
+            </div>
+        </section>
+
+        <!-- Özel Davranışlar -->
+        <section id="ozel-davranislar" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🍼</span>Özel Davranışlar ve Bidon Collé
+            </h2>
+
+            <div class="highlight-box">
+                <h3 class="text-2xl font-bold text-blue-800 mb-3">BIDON COLLÉ (Yapışkan Su Matarası)</h3>
+                <p><strong>Fransızca:</strong> "Yapışkan bidon"</p>
+                <p><strong>Teknik:</strong> Su alma sırasında araçtan momentum alma</p>
+                <p><strong>Legal Süre:</strong> Maksimum 2 saniye</p>
+                <p><strong>İllegal:</strong> 5+ saniye tutma (Sürüklenme)</p>
+                <p><strong>Ceza:</strong> Diskalifikasyon (Elisa Balsamo örneği)</p>
+                <p><strong>Tolerans:</strong> Geride kalmış bisikletçiler için göz yumma</p>
+            </div>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Bidon Collé Çeşitleri:</h4>
+            
+            <div class="term-definition">
+                <h5 class="font-bold text-green-600">Meşru Yapışkan (Legitimate Sticky)</h5>
+                <p><strong>Durum:</strong> Geriden gelen bisikletçi peloton'a yakalanma</p>
+                <p><strong>Süre:</strong> 1-2 saniye</p>
+                <p><strong>Hız:</strong> 40-50 km/h'ye çıkarma</p>
+                <p><strong>Göz Yumma:</strong> Hakemler genelde ceza vermiyor</p>
+            </div>
+
+            <div class="term-definition">
+                <h5 class="font-bold text-red-600">Agresif Yapışkan (Aggressive Sticky)</h5>
+                <p><strong>Durum:</strong> Peloton'dan kopma veya atak için kullanım</p>
+                <p><strong>Risk:</strong> Anında diskalifikasyon</p>
+                <p><strong>Örnekler:</strong> Nibali (Vuelta 2015), Balsamo (Paris-Roubaix)</p>
+            </div>
+
+            <h3 class="subsection-title">🚗 Araç Yardımı Görgü Kuralları</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-blue-800 mb-3">Konvoy Pozisyonu</h4>
+                <p><strong>Team Car Hierarchy:</strong> Lider takımların araçları öne</p>
+                <p><strong>Race Radio:</strong> DS'lerin koordinasyon sistemi</p>
+                <p><strong>Motorbike Referee:</strong> Hakem motorları gözetim</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-blue-800 mb-3">Tekerlek Değişim Protokolü</h4>
+                <p><strong>Quick Change:</strong> 10-15 saniye standart</p>
+                <p><strong>Mechanic Jump:</strong> Araçtan atlama tekniği</p>
+                <p><strong>Push Start:</strong> Araç itişi (5 metre limit)</p>
+            </div>
+        </section>
+
+        <!-- Bisiklet Kültürü -->
+        <section id="bisiklet-kulturu" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🎭</span>Bisiklet Kültürü ve Gelenekler
+            </h2>
+
+            <h3 class="subsection-title">🔮 Batıl İnançlar (Superstitions)</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-purple-600 mb-3">13 Numarası Tersine Çevirme</h4>
+                <p><strong>Gelenek:</strong> 13 numaralı rakam tersine takılır</p>
+                <p><strong>Sebep:</strong> Uğursuzluktan korunma</p>
+                <p><strong>Yaygınlık:</strong> Neredeyse tüm peloton uyguluyor</p>
+                <p><strong>Modern:</strong> Halen devam eden en güçlü gelenek</p>
+            </div>
+
+            <div class="term-definition">
+                <h4 class="font-bold text-purple-600">Şans Ritüelleri (Lucky Rituals)</h4>
+                <p><strong>Same Socks:</strong> Aynı çoraplar (zaferde giyilen)</p>
+                <p><strong>Pre-Race Coffee:</strong> Belirli kahve içme düzeni</p>
+                <p><strong>Bike Blessing:</strong> Bisikleti öpme, dokunma</p>
+                <p><strong>Route Recon:</strong> Aynı güzergahı pre-ride</p>
+            </div>
+
+            <h3 class="subsection-title">🇫🇷 Fransızca Bisiklet Kültürü Terimleri</h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">UN JOUR SANS</h5>
+                    <p>"Günsüz gün" - Kötü performans günü</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">À BLOC</h5>
+                    <p>"Tüm güçle" - Maksimum eforla gitmek</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">COUP DE CHACAL</h5>
+                    <p>"Çakal hilesi" - Son anda saldırı</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">CHASSE PATATE</h5>
+                    <p>"Patates avlama" - Ara durumda kalma</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">FLAMME ROUGE</h5>
+                    <p>"Kırmızı alev" - Son 1 km işareti</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">MUSETTE</h5>
+                    <p>"Küçük çanta" - Beslenme çantası</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🇮🇹 İtalyanca Peloton Kültürü</h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">CAMPIONISSIMO</h5>
+                    <p>"Şampiyonların şampiyonu"</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">TIFOSI</h5>
+                    <p>"Fanatik taraftarlar"</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">GREGARIO</h5>
+                    <p>"Domestik, takım yardımcısı"</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">VOLATA</h5>
+                    <p>"Final sprint"</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🇧🇪 Flemenkçe Klasik Terminolojisi</h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">KASSEIEN</h5>
+                    <p>"Parke taşları"</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">HELLINGEN</h5>
+                    <p>"Dik kısa tırmanışlar"</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">MUUR</h5>
+                    <p>"Duvar" (zor tırmanış)</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-800">WAAIER</h5>
+                    <p>"Rüzgar formasyonu" (echelon)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Takım Rolleri -->
+        <section id="takim-rolleri" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🏃‍♂️</span>Takım Rolleri ve Taktikler
+            </h2>
+
+            <h3 class="subsection-title">👑 Takım Hiyerarşisi</h3>
+            
+            <div class="rider-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">CAPTAIN/LEADER (Kaptan/Lider)</h4>
+                <p><strong>Tanım:</strong> Takımın ana hedefi olan bisikletçi</p>
+                <p><strong>Sorumlulukları:</strong> Etap zaferi veya genel klasman için yarışır</p>
+                <p><strong>Özellikler:</strong> En yüksek maaş, medya sorumluluğu, taktik kararları</p>
+                <p><strong>Örnekler:</strong> Tadej Pogačar (UAE), Jonas Vingegaard (Visma)</p>
+            </div>
+
+            <div class="rider-card">
+                <h4 class="text-xl font-bold text-blue-800 mb-2">LIEUTENANT (Teğmen/Yardımcı Kaptan)</h4>
+                <p><strong>Tanım:</strong> Kaptan yokken takımı yönetebilen deneyimli bisikletçi</p>
+                <p><strong>Rol:</strong> Taktik kararlar, genç bisikletçilere rehberlik</p>
+                <p><strong>Özellik:</strong> Kendi şansını da değerlendirebilir</p>
+                <p><strong>Alternatif Adı:</strong> Super-domestique, Road Captain</p>
+            </div>
+
+            <h4 class="font-semibold text-gray-800 mt-4 mb-2">Domestique Tipleri:</h4>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="term-definition">
+                    <h5 class="font-bold text-green-600">Climbing Domestique (Tırmanış Domestiği)</h5>
+                    <p><strong>Görev:</strong> Dağlarda lideri destekleme</p>
+                    <p><strong>Özellik:</strong> Yüksek güç/ağırlık oranı</p>
+                    <p><strong>Taktiği:</strong> Yüksek tempo tutarak rakipleri elemine etme</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-600">Sprint Domestique (Sprint Domestiği)</h5>
+                    <p><strong>Görev:</strong> Leadout train organizasyonu</p>
+                    <p><strong>Özellik:</strong> Yüksek son hız, pozisyon bulma yetisi</p>
+                    <p><strong>Timing:</strong> Son 3 km'de kritik rol</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-orange-600">Classics Domestique (Klasik Domestiği)</h5>
+                    <p><strong>Görev:</strong> Tek günlük yarışlarda destek</p>
+                    <p><strong>Özellik:</strong> Güçlü, dayanıklı, rüzgar okuma yetisi</p>
+                    <p><strong>Uzmanlık:</strong> Pavé, kötü hava koşulları</p>
+                </div>
+                <div class="term-definition">
+                    <h5 class="font-bold text-purple-600">Water Carrier (Su Taşıyıcı)</h5>
+                    <p><strong>Görev:</strong> Takım arabasından malzeme getirme</p>
+                    <p><strong>Özellik:</strong> Güçlü, peloton içinde hareket kabiliyeti</p>
+                    <p><strong>Sorumluluk:</strong> Bidon, musette, yedek bisiklet nakli</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🏃‍♂️ Sprint Organizasyonu</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-red-600 mb-3">LEADOUT TRAIN (Sprint Treni) Yapısı</h4>
+                
+                <div class="space-y-3">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h5 class="font-bold">1. PACE MAKER (Tempo Tutucular) - 3-5 km kala</h5>
+                        <p><strong>Sayı:</strong> 2-3 bisikletçi | <strong>Güç:</strong> 450-500W sürekli</p>
+                        <p><strong>Görev:</strong> Yüksek tempo, kaçak kontrolü</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h5 class="font-bold">2. INTERMEDIATE LEADOUT - 1.5-2 km kala</h5>
+                        <p><strong>Sayı:</strong> 1-2 bisikletçi | <strong>Güç:</strong> 500-600W</p>
+                        <p><strong>Görev:</strong> Pozisyon koruma, hız artırma</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <h5 class="font-bold">3. PENULTIMATE LEADOUT - 800m-1.5km</h5>
+                        <p><strong>Güç:</strong> 600-800W | <strong>Drop Off:</strong> 500m'de</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h5 class="font-bold">4. FINAL LEADOUT - 200-500m</h5>
+                        <p><strong>Güç:</strong> 800-1000W+ | <strong>Süre:</strong> 20-30 saniye maksimum</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <h5 class="font-bold">5. SPRINTER - Son 200m</h5>
+                        <p><strong>Güç:</strong> 1200-1900W peak | <strong>Hız:</strong> 65-75 km/h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Peloton Dinamikleri -->
+        <section id="peloton-dinamikleri" class="section-card p-6 mb-8">
+            <h2 class="text-3xl font-bold section-title">
+                <span class="emoji-header">🎪</span>Peloton Dinamikleri ve Grup Psikolojisi
+            </h2>
+
+            <h3 class="subsection-title">🌪️ Rüzgar Taktikleri</h3>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="highlight-box">
+                    <h4 class="font-bold text-blue-800">HEADWIND (Karşı Rüzgar)</h4>
+                    <p><strong>Peloton Şekli:</strong> Kompakt, dar</p>
+                    <p><strong>Breakaway Avantajı:</strong> Minimum</p>
+                    <p><strong>Taktik:</strong> Yüksek tempo, erken sprint</p>
+                    <p><strong>Enerji:</strong> %40 artış</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4 class="font-bold text-green-800">TAILWIND (Arkadan Rüzgar)</h4>
+                    <p><strong>Peloton Şekli:</strong> Uzun, geniş</p>
+                    <p><strong>Breakaway Avantajı:</strong> Maksimum</p>
+                    <p><strong>Taktik:</strong> Geç yakalama, geç sprint</p>
+                    <p><strong>Hız:</strong> 10-15 km/h artış</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4 class="font-bold text-red-800">CROSSWIND (Yan Rüzgar)</h4>
+                    <p><strong>Formation:</strong> Echelon/Waaier</p>
+                    <p><strong>Maksimum Kişi:</strong> 8-12</p>
+                    <p><strong>Sonuç:</strong> Peloton bölünmesi</p>
+                    <p><strong>En Kritik:</strong> Taktiksel üstünlük</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">📍 Peloton İçi Pozisyonlama</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-blue-800 mb-3">İdeal Pozisyon</h4>
+                <p><strong>Konum:</strong> Pelotonun ön üçte biri</p>
+                <p><strong>Yanal:</strong> Merkez-sağ (draft + kaçış rotası)</p>
+                <p><strong>Kaçınılacak:</strong> Çok ön (rüzgar), çok arka (kazalar)</p>
+            </div>
+
+            <div class="term-definition">
+                <h4 class="font-bold text-blue-800">Pozisyonlama Stratejisi</h4>
+                <p><strong>Tırmanışlar:</strong> Tırmanış öncesi yukarı çıkma</p>
+                <p><strong>İnişler:</strong> Güvenlik için orta</p>
+                <p><strong>Finaller:</strong> Ön 20 bisikletçi minimum</p>
+                <p><strong>Crosswind:</strong> Rüzgar tarafında pozisyonlanma</p>
+            </div>
+
+            <h3 class="subsection-title">🗣️ İletişim Kodları</h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="term-definition">
+                    <h5 class="font-bold text-green-600">El İşaretleri (Hand Signals)</h5>
+                    <p><strong>Hole:</strong> Çukur işareti (aşağı işaret)</p>
+                    <p><strong>Glass:</strong> Cam parçası (yan-yan hareket)</p>
+                    <p><strong>Car Back:</strong> Araç geliyor (arkaya işaret)</p>
+                    <p><strong>All Clear:</strong> Güvenli geçiş (yan hareket)</p>
+                </div>
+                
+                <div class="term-definition">
+                    <h5 class="font-bold text-blue-600">Sesli Uyarılar (Verbal Warnings)</h5>
+                    <p><strong>"Hole!":</strong> Çukur uyarısı</p>
+                    <p><strong>"Car Up!":</strong> Önden araç geliyor</p>
+                    <p><strong>"Car Back!":</strong> Arkadan araç geliyor</p>
+                    <p><strong>"Easy!":</strong> Sakinleşin, tempo düşürün</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🚴‍♂️ Paceline Formasyonları</h3>
+            
+            <div class="highlight-box">
+                <h4 class="text-xl font-bold text-blue-800 mb-3">Formation Tipleri</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h5 class="font-bold text-green-600">Single Paceline</h5>
+                        <p><strong>Formation:</strong> Tek sıra</p>
+                        <p><strong>Rotation:</strong> Ön bisikletçi geriye düşer</p>
+                        <p><strong>Usage:</strong> Dar yollar, karşı rüzgar</p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-blue-600">Double Paceline</h5>
+                        <p><strong>Formation:</strong> İki paralel hat</p>
+                        <p><strong>Rotation:</strong> Bir taraftan yukarı, diğerinden aşağı</p>
+                        <p><strong>Usage:</strong> Geniş yollar, yan rüzgar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8 mt-12">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-bicycle mr-3 text-blue-400"></i>
+                        Bisiklet Kültürü Rehberi
                     </h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-green-700 mb-2">Aerodinamik İyileştirmeler</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• Entegre cockpit sistemleri</li>
-                                <li>• Derin kesit jantlar (50-65mm)</li>
-                                <li>• Optimize edilmiş tüp profilleri</li>
-                                <li>• <strong>Watt tasarrufu:</strong> 15-25W (@50km/h)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-green-700 mb-2">Marginal Gains</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• Pozisyon optimizasyonu: 2-5%</li>
-                                <li>• Ağırlık azaltımı: 1-2%</li>
-                                <li>• Rulman teknolojisi: 0.5-1%</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Running Technology -->
-                <div class="legal rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">
-                        <i class="fas fa-shoe-prints mr-2"></i>Koşu Teknolojisi (Super Shoes)
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-green-700 mb-2">Nike Vaporfly Devrimi</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• Karbon fiber plaka + PEBA köpük</li>
-                                <li>• %4 performans artışı (kanıtlanmış)</li>
-                                <li>• 2016'dan beri sürekli gelişim</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-green-700 mb-2">Track Spikes</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• Nike ZoomX Dragonfly (2020)</li>
-                                <li>• Süper hafif karbon plaka</li>
-                                <li>• Rekor performanslarda kritik rol</li>
-                            </ul>
-                        </div>
+                    <p class="text-gray-300 mb-4">
+                        Peloton'un gizli dilini öğrenin, bisiklet yarışlarının zengin kültürünü keşfedin
+                    </p>
+                    <div class="border-t border-gray-600 pt-4 mt-6">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-user mr-2"></i>
+                            <strong>Hazırlayan:</strong> Ümit Emre Erdoğan
+                        </p>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Türkiye'nin en kapsamlı bisiklet kültürü ve terminolojisi rehberi
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Section 4: Legal Performance Enhancers -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-leaf mr-3 text-green-600"></i>
-                4. Legal Performans Artırıcılar
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="legal rounded-lg p-6">
-                    <h3 class="text-lg font-semibold mb-3">Keton Esterleri</h3>
-                    <div class="space-y-2 text-sm">
-                        <p><strong>Etki Mekanizması:</strong></p>
-                        <ul class="list-disc ml-4 space-y-1">
-                            <li>Alternatif enerji kaynağı</li>
-                            <li>Karbohidrat tasarrufu</li>
-                            <li>Merkezi yorgunluk azaltımı</li>
-                        </ul>
-                        <div class="data-point bg-green-200 text-green-800">%2-3 performans artışı</div>
-                    </div>
-                </div>
-
-                <div class="legal rounded-lg p-6">
-                    <h3 class="text-lg font-semibold mb-3">Nitrat Suplementasyonu</h3>
-                    <div class="space-y-2 text-sm">
-                        <p><strong>Etki Mekanizması:</strong></p>
-                        <ul class="list-disc ml-4 space-y-1">
-                            <li>Nitrik oksit (NO) artışı</li>
-                            <li>Damar genişlemesi</li>
-                            <li>Mitokondriyal etkinlik</li>
-                        </ul>
-                        <div class="data-point bg-green-200 text-green-800">%2-4 endürans artışı</div>
-                    </div>
-                </div>
-
-                <div class="legal rounded-lg p-6">
-                    <h3 class="text-lg font-semibold mb-3">Gelişmiş Beslenme</h3>
-                    <div class="space-y-2 text-sm">
-                        <p><strong>Yeni Protokoller:</strong></p>
-                        <ul class="list-disc ml-4 space-y-1">
-                            <li>120g karbohidrat/saat</li>
-                            <li>Multiple transporter</li>
-                            <li>Optimize timing</li>
-                        </ul>
-                        <div class="data-point bg-green-200 text-green-800">%3-5 performans artışı</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: Suspicious/Illegal Methods -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-exclamation-triangle mr-3 text-red-600"></i>
-                5. Şüpheli ve İllegal Doping Yöntemleri
-            </h2>
-
-            <!-- EPO and Blood Doping -->
-            <div class="illegal rounded-lg p-6 mb-6">
-                <h3 class="text-xl font-semibold mb-4">Eritropoetin (EPO) ve Kan Dopingi</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-semibold mb-2">Modern EPO Yöntemleri:</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• <strong>Mikro-dozlama:</strong> Tespit eşiği altı</li>
-                            <li>• <strong>CERA:</strong> Uzun etkili EPO türevleri</li>
-                            <li>• <strong>Biyobenzerler:</strong> Farklı hücre hatları</li>
-                            <li>• <strong>Otolog transfüzyon:</strong> Kendi kanı</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Performans Etkisi:</h4>
-                        <div class="space-y-2">
-                            <div class="data-point bg-red-200 text-red-800">%15-20 endürans artışı</div>
-                            <div class="data-point bg-red-200 text-red-800">Hematokrit: +10-15%</div>
-                            <div class="data-point bg-red-200 text-red-800">VO2 max: +8-12%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carbon Monoxide Rebreathing -->
-            <div class="suspicious rounded-lg p-6 mb-6">
-                <h3 class="text-xl font-semibold mb-4">Karbon Monoksit Rebreathing (Yeni Trend)</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-semibold mb-2">2024 Gelişmeleri:</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Tour de France'ta 3 büyük takım kullandı</li>
-                            <li>• UCI Şubat 2025'te yasakladı</li>
-                            <li>• WADA henüz yasaklamadı</li>
-                            <li>• %10 karboksihemoglobin hedefi</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Güvenlik Riskleri:</h4>
-                        <ul class="text-sm space-y-1 text-red-600">
-                            <li>• %20+ seviye: Toksik etki</li>
-                            <li>• %40+ seviye: Ölümcül</li>
-                            <li>• Kalp ve beyin hasarı riski</li>
-                            <li>• Uzun vadeli etkiler belirsiz</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Micro-dosing -->
-            <div class="illegal rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-4">Mikro-Dozlama Stratejileri</h3>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <div class="bg-white p-4 rounded">
-                        <h4 class="font-semibold text-red-700 mb-2">Testosteron Jeli</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Çok düşük dozlar</li>
-                            <li>• Tespit penceresi daraltma</li>
-                            <li>• Biyolojik pasapordan kaçınma</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-4 rounded">
-                        <h4 class="font-semibold text-red-700 mb-2">İnsülin Manipülasyonu</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Sürekli glikoz monitörü</li>
-                            <li>• Optimize karbohidrat</li>
-                            <li>• Tespit zorluğu</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-4 rounded">
-                        <h4 class="font-semibold text-red-700 mb-2">EPO Mikro-doz</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Eşik altı dozlar</li>
-                            <li>• Kısa yarı ömür</li>
-                            <li>• Kombinasyon yaklaşımı</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Gene Doping -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-dna mr-3 text-purple-600"></i>
-                6. Gen Doping ve Gelecek Tehditleri
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="illegal rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">Potansiyel Gen Hedefleri</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-red-700 mb-2">ACTN3 Geni</h4>
-                            <p class="text-sm">Kas lif tipi optimizasyonu ve güç çıkışı artırımı</p>
-                        </div>
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-red-700 mb-2">Myostatin İnhibitörleri</h4>
-                            <p class="text-sm">Kas hipertrofisi ve kütle artışı</p>
-                        </div>
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-red-700 mb-2">EPO Gen Terapisi</h4>
-                            <p class="text-sm">Endojen EPO üretimini kalıcı artırma</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="suspicious rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">mRNA Teknolojileri</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-orange-700 mb-2">Geçici Gen Ekspresyonu</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• CRISPR teknolojisi</li>
-                                <li>• Geçici protein üretimi</li>
-                                <li>• Tespit zorlukları</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-4 rounded">
-                            <h4 class="font-semibold text-orange-700 mb-2">Nanotechnoloji</h4>
-                            <ul class="text-sm space-y-1">
-                                <li>• Hedefe yönelik ilaç salımı</li>
-                                <li>• Biyoyararlılık artışı</li>
-                                <li>• Maskeleme potansiyeli</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 7: Detection Methods -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-search mr-3 text-blue-600"></i>
-                7. Tespit Yöntemleri ve Zorluklar
-            </h2>
-
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <h3 class="text-xl font-semibold mb-6">Biyolojik Pasaport Sistemi (2024 Güncellemeleri)</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="legal p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Hematolojik Modül</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Kan dopingi tespiti</li>
-                            <li>• Hematokrit izlemi</li>
-                            <li>• EPO metabolitleri</li>
-                        </ul>
-                    </div>
-                    <div class="legal p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Steroidal Modül</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Anabolik steroid izlemi</li>
-                            <li>• Testosteron/Epitestosteron oranı</li>
-                            <li>• Metabolit profilleri</li>
-                        </ul>
-                    </div>
-                    <div class="legal p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Endokrin Modül (YENİ)</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Büyüme hormonu</li>
-                            <li>• İnsülin benzeri faktörler</li>
-                            <li>• Peptid hormonlar</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 8: Performance Analysis -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-chart-bar mr-3 text-purple-600"></i>
-                8. Sinerjik Etki Analizi
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">Bisiklette Toplam Potansiyel</h3>
-                    <div class="chart-container">
-                        <canvas id="cyclingGainsChart"></canvas>
-                    </div>
-                    <div class="mt-4 space-y-2">
-                        <div class="flex justify-between">
-                            <span class="text-sm">Aerodinamik iyileştirmeler:</span>
-                            <span class="font-semibold text-green-600">3-5%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-sm">Beslenme optimizasyonu:</span>
-                            <span class="font-semibold text-green-600">2-3%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-sm">Antrenman gelişmeleri:</span>
-                            <span class="font-semibold text-green-600">3-5%</span>
-                        </div>
-                        <div class="flex justify-between border-t pt-2">
-                            <span class="text-sm">Şüpheli yöntemler:</span>
-                            <span class="font-semibold text-red-600">8-15%?</span>
-                        </div>
-                        <div class="flex justify-between font-bold border-t pt-2">
-                            <span>TOPLAM POTANSİYEL:</span>
-                            <span class="text-red-600">16-28%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">Koşuda Toplam Potansiyel</h3>
-                    <div class="chart-container">
-                        <canvas id="runningGainsChart"></canvas>
-                    </div>
-                    <div class="mt-4 space-y-2">
-                        <div class="flex justify-between">
-                            <span class="text-sm">Super shoes teknolojisi:</span>
-                            <span class="font-semibold text-green-600">4%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-sm">Beslenme/pacing:</span>
-                            <span class="font-semibold text-green-600">2-3%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-sm">Antrenman bilimi:</span>
-                            <span class="font-semibold text-green-600">3-4%</span>
-                        </div>
-                        <div class="flex justify-between border-t pt-2">
-                            <span class="text-sm">Potansiyel doping:</span>
-                            <span class="font-semibold text-red-600">5-10%?</span>
-                        </div>
-                        <div class="flex justify-between font-bold border-t pt-2">
-                            <span>TOPLAM POTANSİYEL:</span>
-                            <span class="text-red-600">14-21%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 9: Conclusions -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">
-                <i class="fas fa-balance-scale mr-3 text-indigo-600"></i>
-                9. Sonuçlar ve Değerlendirme
-            </h2>
-
-            <div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-lg p-8">
-                <h3 class="text-2xl font-semibold mb-6">Ana Bulgular</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-semibold text-green-700 mb-3">Legal Faktörler (%60-70 katkı):</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ <strong>Teknolojik devrim</strong> (aero, super shoes)</li>
-                            <li>✅ <strong>Beslenme bilimi</strong> gelişmeleri</li>
-                            <li>✅ <strong>Antrenman metodolojisi</strong> ilerlemeleri</li>
-                            <li>✅ <strong>Marginal gains</strong> yaklaşımının olgunlaşması</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-red-700 mb-3">Şüpheli Faktörler (%30-40 katkı?):</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>⚠️ <strong>Karbon monoksit rebreathing</strong></li>
-                            <li>⚠️ <strong>Mikro-dozlama</strong> teknikleri</li>
-                            <li>⚠️ <strong>Yeni nesil maskeleme</strong> yöntemleri</li>
-                            <li>⚠️ <strong>Kombine doping</strong> protokolleri</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-8 p-6 bg-white rounded-lg border-l-4 border-indigo-500">
-                    <h4 class="font-semibold text-indigo-700 mb-3">Kritik Değerlendirme:</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>• <strong>Pogačar'ın 7.11 W/kg performansları</strong> fizyolojik sınırları zorluyor</li>
-                        <li>• <strong>Tour de France hızlarındaki artış</strong> sadece teknoloji ile tam açıklanamayabilir</li>
-                        <li>• <strong>Koşudaki rekorlar</strong> büyük ölçüde ayakkabı teknolojisi ile açıklanabilir</li>
-                        <li>• <strong>Tespit teknolojilerinin</strong> gelişmesi ve proaktif yaklaşımlar gerekiyor</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
+        </footer>
     </main>
 
-    <!-- References -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold mb-6">
-                <i class="fas fa-book mr-3"></i>Kaynaklar ve Referanslar
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Resmi Kuruluşlar ve Raporlar</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>1. WADA (2024). "2024 Prohibited List." <a href="https://www.wada-ama.org/sites/default/files/2023-09/2024list_en_final_22_september_2023.pdf" class="text-blue-300 underline">https://www.wada-ama.org</a></li>
-                        <li>2. UCI (2025). "Anti-Doping Programme and Technological Fraud Detection." <a href="https://www.uci.org" class="text-blue-300 underline">https://www.uci.org</a></li>
-                        <li>3. World Athletics (2024). "Performance Data and Records." <a href="https://worldathletics.org" class="text-blue-300 underline">https://worldathletics.org</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Akademik Çalışmalar</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>4. Heuberger, J.A.A.C., et al. (2017). "Effects of erythropoietin on cycling performance." <em>The Lancet Haematology</em>, 4(8), e374-e386.</li>
-                        <li>5. Salamin, O., et al. (2018). "Erythropoietin as a performance-enhancing drug." <em>Molecular and Cellular Endocrinology</em>, 464, 75-87.</li>
-                        <li>6. Schumacher, Y.O., et al. (2012). "Detection of EPO doping and blood doping." <em>Drug Testing and Analysis</em>, 4(3-4), 205-217.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 mt-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Performans Analizi Kaynakları</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>7. Lanterne Rouge (2025). "Power Analysis: Pogačar Destroys GC Riders on Hautacam." <a href="https://lanternerouge.com/2025/07/17/pogacar-destroys-gc-riders-on-hautacam-tour-de-france-2025-stage-12/" class="text-blue-300 underline">lanternerouge.com</a></li>
-                        <li>8. Velo Magazine (2024). "Power Analysis: Pogačar's 464W Mountain TT Masterclass." <a href="https://velo.outsideonline.com" class="text-blue-300 underline">velo.outsideonline.com</a></li>
-                        <li>9. Pro Cycling Stats (2025). "Tour de France and Giro d'Italia Average Speed Data." <a href="https://www.procyclingstats.com" class="text-blue-300 underline">procyclingstats.com</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Teknoloji ve Doping Araştırmaları</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>10. Rodrigo-Carranza, V., et al. (2021). "Influence of advanced shoe technology on marathon performance." <em>Scientific Reports</em>, 11(1), 22389.</li>
-                        <li>11. Berlato, D.G., & Bairros, A.V. (2020). "Meldonium: Pharmacological, toxicological, and analytical aspects." <em>Toxicology Research and Application</em>, 4, 1-12.</li>
-                        <li>12. Evans, M., & Egan, B. (2018). "Intermittent running and cognitive performance after ketone ester ingestion." <em>Medicine & Science in Sports & Exercise</em>, 50(11), 2330-2338.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 mt-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Gen Doping ve Gelecek Tehditleri</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>13. van der Gronde, T., et al. (2013). "Gene doping: an overview and current implications for athletes." <em>British Journal of Sports Medicine</em>, 47(11), 670-678.</li>
-                        <li>14. Garton, F.C., et al. (2018). "The effect of ACTN3 gene doping on skeletal muscle performance." <em>The American Journal of Human Genetics</em>, 102(5), 845-857.</li>
-                        <li>15. Yamada, A.K., et al. (2012). "Myostatin: genetic variants, therapy and gene doping." <em>Brazilian Journal of Physical Therapy</em>, 16(4), 271-277.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-300">Karbon Monoksit ve Yeni Yöntemler</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>16. Triathlete Magazine (2025). "Carbon Monoxide Rebreathing: Training Hack or Death Trap?" <a href="https://www.triathlete.com" class="text-blue-300 underline">triathlete.com</a></li>
-                        <li>17. Journal of Applied Physiology (2024). "Carbon monoxide supplementation: evaluating its potential to enhance altitude training effects." <em>J Appl Physiol</em>, 127(3), 892-903.</li>
-                        <li>18. Cycling News (2024). "The anti-doping frontier: How the biological passport has changed cycling." <a href="https://www.cyclingnews.com" class="text-blue-300 underline">cyclingnews.com</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-600 text-center">
-                <p class="text-sm opacity-75">
-                    Bu kapsamlı analiz, akademik çalışmalar, resmi kuruluş raporları ve güvenilir spor medyası kaynaklarından derlenmiştir.
-                    <br>Son güncelleme: Temmuz 2025 | Hazırlayan: <strong>Ümit Emre Erdoğan</strong>
-                </p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Tour de France Speed Chart
-        const tourCtx = document.getElementById('tourSpeedChart').getContext('2d');
-        new Chart(tourCtx, {
-            type: 'line',
-            data: {
-                labels: ['2020', '2021', '2022', '2023', '2024', '2025*'],
-                datasets: [{
-                    label: 'Ortalama Hız (km/h)',
-                    data: [40.0, 41.15, 42.10, 41.41, 41.80, 43.8],
-                    borderColor: '#3B82F6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: true
-                    },
-                    title: {
-                        display: true,
-                        text: 'Tour de France Kazananının Ortalama Hızı'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        min: 39,
-                        max: 45
-                    }
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.sticky-nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
             }
         });
 
-        // Cycling Performance Gains Chart
-        const cyclingCtx = document.getElementById('cyclingGainsChart').getContext('2d');
-        new Chart(cyclingCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Aerodinamik', 'Beslenme', 'Antrenman', 'Şüpheli Yöntemler'],
-                datasets: [{
-                    data: [4, 2.5, 4, 12],
-                    backgroundColor: ['#10B981', '#34D399', '#6EE7B7', '#EF4444'],
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    },
-                    title: {
-                        display: true,
-                        text: 'Performans Artış Faktörleri (%)'
-                    }
-                }
-            }
-        });
-
-        // Running Performance Gains Chart
-        const runningCtx = document.getElementById('runningGainsChart').getContext('2d');
-        new Chart(runningCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Super Shoes', 'Beslenme/Pacing', 'Antrenman', 'Potansiyel Doping'],
-                datasets: [{
-                    data: [4, 2.5, 3.5, 7.5],
-                    backgroundColor: ['#10B981', '#34D399', '#6EE7B7', '#EF4444'],
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    },
-                    title: {
-                        display: true,
-                        text: 'Performans Artış Faktörleri (%)'
-                    }
-                }
-            }
-        });
+        // Mobile menu optimization
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('.section-card').forEach(card => {
+                card.style.margin = '0 0 1rem 0';
+                card.style.borderRadius = '8px';
+            });
+        }
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9641f88f3bd8623b","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
     <script id="html_badge_script1">
         window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpnQKAV4tAiPth9yzbkPA5uxulAT6oWXrwGenkQwAv1pZl3jA8VK9f%2BeJGe0pEtVlSveRp6ZLyqQ%2BXybqJIV4qG1yPcQYE1I6GBNBX48C1pE4lONPeb%2FKFLltgjSXLdhxFKMJ1XU8i%2FuPleXFieMcL2Y%2FCrivnp%2FQc9SaXepBmLvpXshPXAeqW5Ctt5J4arR5EwmuYBAaLTg2pYbiA3qD9s1%2Br1jAi99Uk5ghdWiCfofh9MfCO4iWI3xvdpxuIC6yg6k2%2FgCTlpPLy3k4JVPDPlShwnXXmrSH3WHoI6FdiVPYfjk0NiNFhJUv36jar%2FzrtNZJOnTdghx3OWdnsRByOO%2BKBnGloFk%2FTjvZrufcDgscq7MwSIdwkcK2s3vE7f%2BzrAXz1KyTnMyMXdmgOIja3mo5akUda1tUtJhHnV03hQmlnSlC4zCV45rhWe%2BurF7PvxM34Xwyoo6Ls4XUnQkdLF%2BanaMl35xw10QuBBo%2FvrUmFxOt6dnkbpClwhIgGFF1cknwlgpizxfppvnccQ31v4%3D";
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk1G8H4yiIcz9uzNUI2W%2Fh5GKSH4W3CRyLgAJaBOSJzREkvWmA%2FJQmL4zXXFahQ%2FJakJBiN7YjMtVOy2IKWTdJ1p1nmORMWVw2HTcEOi7i4UkLQ1JocSqQJUFZJ2eDtDJQbySbI2xuwkVRc3ylREsvuo92KEszRpy5wFpKbZ%2F3gbse22UJLlaKUR6DUN8UrIMzOvay67kT7dFPNfhxKtMsRCa4BVYeA2XCiwmFxd%2FGs3gqIHrXT4rd8lR8tsjdjG1emh7LJLyiPu%2BlOzWOaSfrnTtAp6dLpd1%2Bg7CjH%2F8KPi3h3%2Bg6AOSgIBCuV6gQGJHu99UmL%2B3RGvjC5CN3Lz3ySAsdPJGQ9gbcdxijFKmmxRKBkO7IYXGK9BuTErNg%2B6BT5BOuZ3yoGDh3MJ8Ue%2BBUr69UDlZRtRt5A1MSvlT7W%2F0l7b2MisejvmDPneNV77CIMKfOCTkQPYlaaqwJOArft9GTQlbXiQWf3fzb96nHJti96cVDh9wFt0q0dgNUzWKDtfdpq74LmgsRXTtc%2F%2FtNnp%2FFQ5r2KS8qqOX6xG4t0E";
         window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpnQKAV4tAiPth9yzbkPA5uxulAT6oWXrwGenkQwAv1pZl3jA8VK9f+eJGe0pEtVlSveRp6ZLyqQ+XybqJIV4qG1yPcQYE1I6GBNBX48C1pE4lONPeb/KFLltgjSXLdhxFKMJ1XU8i/uPleXFieMcL2Y/Crivnp/Qc9SaXepBmLvpXshPXAeqW5Ctt5J4arR5EwmuYBAaLTg2pYbiA3qD9s1+r1jAi99Uk5ghdWiCfofh9MfCO4iWI3xvdpxuIC6yg6k2/gCTlpPLy3k4JVPDPlShwnXXmrSH3WHoI6FdiVPYfjk0NiNFhJUv36jar/zrtNZJOnTdghx3OWdnsRByOO+KBnGloFk/TjvZrufcDgscq7MwSIdwkcK2s3vE7f+zrAXz1KyTnMyMXdmgOIja3mo5akUda1tUtJhHnV03hQmlnSlC4zCV45rhWe+urF7PvxM34Xwyoo6Ls4XUnQkdLF+anaMl35xw10QuBBo/vrUmFxOt6dnkbpClwhIgGFF1cknwlgpizxfppvnccQ31v4=";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk1G8H4yiIcz9uzNUI2W/h5GKSH4W3CRyLgAJaBOSJzREkvWmA/JQmL4zXXFahQ/JakJBiN7YjMtVOy2IKWTdJ1p1nmORMWVw2HTcEOi7i4UkLQ1JocSqQJUFZJ2eDtDJQbySbI2xuwkVRc3ylREsvuo92KEszRpy5wFpKbZ/3gbse22UJLlaKUR6DUN8UrIMzOvay67kT7dFPNfhxKtMsRCa4BVYeA2XCiwmFxd/Gs3gqIHrXT4rd8lR8tsjdjG1emh7LJLyiPu+lOzWOaSfrnTtAp6dLpd1+g7CjH/8KPi3h3+g6AOSgIBCuV6gQGJHu99UmL+3RGvjC5CN3Lz3ySAsdPJGQ9gbcdxijFKmmxRKBkO7IYXGK9BuTErNg+6BT5BOuZ3yoGDh3MJ8Ue+BUr69UDlZRtRt5A1MSvlT7W/0l7b2MisejvmDPneNV77CIMKfOCTkQPYlaaqwJOArft9GTQlbXiQWf3fzb96nHJti96cVDh9wFt0q0dgNUzWKDtfdpq74LmgsRXTtc//tNnp/FQ5r2KS8qqOX6xG4t0E";
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
